@@ -10,6 +10,8 @@
       "SmartNotificationManager/1.0.0": {
         "dependencies": {
           "Microsoft.WindowsAppSDK": "1.8.251003001",
+          "SmartNotificationLibrary": "1.0.0",
+          "SmartNotificationManager.WinUI": "1.0.0",
           "WinLogger": "1.0.0",
           "WinUI3Component": "1.0.0",
           "Microsoft.Web.WebView2.Core.Projection": "1.0.3179.45",
@@ -1029,6 +1031,49 @@
           }
         }
       },
+      "SmartNotificationLibrary/1.0.0": {
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.8.251003001",
+          "SmartNotificationManger.Entities": "1.0.0",
+          "WinCommon": "1.0.0",
+          "WinLogger": "1.0.0",
+          "WinSQLiteDBAdapter": "1.0.0"
+        },
+        "runtime": {
+          "SmartNotificationLibrary.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SmartNotificationManager.WinUI/1.0.0": {
+        "dependencies": {
+          "Microsoft.WindowsAppSDK": "1.8.251003001",
+          "SmartNotificationLibrary": "1.0.0",
+          "SmartNotificationManger.Entities": "1.0.0",
+          "WinCommon": "1.0.0",
+          "WinLogger": "1.0.0",
+          "WinSQLiteDBAdapter": "1.0.0",
+          "WinUI3Component": "1.0.0"
+        },
+        "runtime": {
+          "SmartNotificationManager.WinUI.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SmartNotificationManger.Entities/1.0.0": {
+        "dependencies": {
+          "WinCommon": "1.0.0"
+        },
+        "runtime": {
+          "SmartNotificationManger.Entities.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "WinCommon/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "9.0.1",
@@ -1239,6 +1284,21 @@
       "sha512": "sha512-lxCZarZdvAsMl2zw9bXHrXK6RxVhB4b23iTFhCOdHFhxfbsxLxWf+ocvswJwR/9Wh/E//ddMi+wJGqUKV7VwoA==",
       "path": "sqlitepclraw.provider.e_sqlite3/2.1.2",
       "hashPath": "sqlitepclraw.provider.e_sqlite3.2.1.2.nupkg.sha512"
+    },
+    "SmartNotificationLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SmartNotificationManager.WinUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SmartNotificationManger.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "WinCommon/1.0.0": {
       "type": "project",

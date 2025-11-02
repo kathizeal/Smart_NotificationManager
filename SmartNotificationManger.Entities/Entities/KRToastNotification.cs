@@ -1,7 +1,7 @@
 ﻿using SQLite;
 using WinCommon.Util;
 
-namespace SmartNotificationManger
+namespace SmartNotificationManger.Entities
 {
     public class KRToastNotification : ObservableObject
     {

@@ -25,6 +25,12 @@
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
+    <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationLibrary\bin\x64\Release\net8.0-windows10.0.19041.0\SmartNotificationLibrary.pri">
+      <PackagePath>SmartNotificationLibrary.pri</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager.View\bin\x64\Release\net8.0-windows10.0.19041.0\SmartNotificationManager.WinUI.pri">
+      <PackagePath>SmartNotificationManager.WinUI.pri</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\WinUI3Component\bin\x64\Release\net8.0-windows10.0.19041.0\WinUI3Component.pri">
       <PackagePath>WinUI3Component.pri</PackagePath>
     </AppxPackagedFile>
@@ -97,8 +103,17 @@
     <AppxPackagedFile Include="Z:\Kathi\.nuget\packages\microsoft.web.webview2\1.0.3179.45\runtimes\win-x64\native_uap\Microsoft.Web.WebView2.Core.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\linked\SQLite-net.dll">
+      <PackagePath>SQLite-net.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\linked\System.ComponentModel.dll">
       <PackagePath>System.ComponentModel.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\Microsoft.Extensions.DependencyInjection.dll">
+      <PackagePath>Microsoft.Extensions.DependencyInjection.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\Microsoft.Extensions.DependencyInjection.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.DependencyInjection.Abstractions.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll">
       <PackagePath>Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll</PackagePath>
@@ -109,8 +124,23 @@
     <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\Microsoft.WinUI.dll">
       <PackagePath>Microsoft.WinUI.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\SmartNotificationLibrary.dll">
+      <PackagePath>SmartNotificationLibrary.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\SmartNotificationManager.WinUI.dll">
+      <PackagePath>SmartNotificationManager.WinUI.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\WinCommon.dll">
+      <PackagePath>WinCommon.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\WinLogger.dll">
       <PackagePath>WinLogger.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\WinSQLiteDBAdapter.dll">
+      <PackagePath>WinSQLiteDBAdapter.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\WinUI3Component.dll">
+      <PackagePath>WinUI3Component.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\SmartNotificationManager.dll">
       <PackagePath>SmartNotificationManager.dll</PackagePath>

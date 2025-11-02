@@ -1,6 +1,7 @@
 ﻿using SmartNotificationLibrary.DBHandler.Contract;
 using SmartNotificationLibrary.DI;
 using SmartNotificationLibrary.Enums;
+using SmartNotificationManger.Entities.Constants;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -131,7 +132,7 @@ namespace SmartNotificationLibrary.Services
                 try
                 {
                     // Load custom priority apps from database
-                    var priorityApps = _dbHandler.GetCustomPriorityApps(INotifyConstant.CurrentUser);
+                    var priorityApps = _dbHandler.GetCustomPriorityApps(SmartNotificationConstants.CurrentUser);
 
                     // Clear existing cache
                     _packagePriorityCache.Clear();
@@ -139,9 +140,9 @@ namespace SmartNotificationLibrary.Services
                     // Populate cache
                     foreach (var app in priorityApps)
                     {
-                        if (!string.IsNullOrEmpty(app.PackageName))
+                        if (!string.IsNullOrEmpty(app.PackageFamilyName))
                         {
-                            _packagePriorityCache.TryAdd(app.PackageName, app.Priority);
+                            _packagePriorityCache.TryAdd(app.PackageFamilyName, app.Priority);
                         }
                     }
 
@@ -167,7 +168,7 @@ namespace SmartNotificationLibrary.Services
                 try
                 {
                     // Load all spaces from database
-                    var spaces = _dbHandler.GetAllSpaceMappers(INotifyConstant.CurrentUser);
+                    var spaces = _dbHandler.GetAllSpaceMappers(SmartNotificationConstants.CurrentUser);
 
                     // Clear existing cache
                     _spacePackageCache.Clear();
@@ -175,7 +176,7 @@ namespace SmartNotificationLibrary.Services
                     // Populate cache for each space
                     foreach (var space in spaces)
                     {
-                        var packagesInSpace = _dbHandler.GetPackagesBySpaceId(space.SpaceId, INotifyConstant.CurrentUser);
+                        var packagesInSpace = _dbHandler.GetPackagesBySpaceId(space.SpaceId, SmartNotificationConstants.CurrentUser);
                         var packageFamilyNames = new HashSet<string>(
                             packagesInSpace.Where(p => !string.IsNullOrEmpty(p.PackageFamilyName))
                                           .Select(p => p.PackageFamilyName)

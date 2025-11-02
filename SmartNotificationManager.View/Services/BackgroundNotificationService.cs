@@ -1,17 +1,14 @@
 ﻿using Microsoft.UI.Xaml.Media.Imaging;
-using SmartNotificationLibrary.Constants;
-using SmartNotificationLibrary.Entity;
-using SmartNotificationLibrary.Model;
-using SmartNotificationManager.WinUI.ToastDI;
 using SmartNotificationManger;
+using SmartNotificationManger.Entities;
 using SmartNotificationManger.Entities.Constants;
 using SmartNotificationManger.Entities.Model;
+using SmartNotificationManger.Entities.Utils;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
@@ -184,7 +181,7 @@ namespace SmartNotificationManager.View.Services
                             $"Error getting app logo: {ex.Message}");
                     }
                 }
-             
+
 
                 // Get the toast notification content
                 if (toastBinding != null)
@@ -216,7 +213,7 @@ namespace SmartNotificationManager.View.Services
                     KRToastBObj ToastViewData = new KRToastBObj(data, packageProfile);
 
                     // Update ViewModel (this will also store in database)
-                    _viewModel?.UpdateKToastNotification(ToastViewData);
+                    //_viewModel?.UpdateKToastNotification(ToastViewData);
 
                     // Raise event for UI updates
                     NotificationEventInokerUtil.NotifyNotificationListened(new NotificationReceivedEventArgs(ToastViewData));
@@ -249,7 +246,7 @@ namespace SmartNotificationManager.View.Services
                 var currentAppDisplayName = currentPackage.DisplayName;
 
                 return packageName == currentPackageFamily ||
-                       appDisplayName == SmartNotificationConstants.ApplicationName||
+                       appDisplayName == SmartNotificationConstants.ApplicationName ||
                        appDisplayName == currentAppDisplayName ||
                        appId.Contains(SmartNotificationConstants.ApplicationName);
             }

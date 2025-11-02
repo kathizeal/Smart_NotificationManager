@@ -5,6 +5,7 @@ using SmartNotificationLibrary.DI;
 using SmartNotificationLibrary.Enums;
 using SmartNotificationLibrary.Services;
 using SmartNotificationManger;
+using SmartNotificationManger.Entities;
 using SmartNotificationManger.Entities.Constants;
 using SmartNotificationManger.Entities.Model;
 using System;

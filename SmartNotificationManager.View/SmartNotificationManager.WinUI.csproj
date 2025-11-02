@@ -14,6 +14,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmartNotificationLibrary\SmartNotificationLibrary.csproj" />
+    <ProjectReference Include="..\SmartNotificationManger.Entities\SmartNotificationManger.Entities.csproj" />
     <ProjectReference Include="..\WinCommon\WinCommon.csproj" />
     <ProjectReference Include="..\WinLogger\WinLogger.csproj" />
     <ProjectReference Include="..\WinSQLiteDBAdapter\WinSQLiteDBAdapter.csproj" />

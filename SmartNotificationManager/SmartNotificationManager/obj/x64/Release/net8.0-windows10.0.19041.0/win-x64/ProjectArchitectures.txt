@@ -1,3 +1,11 @@
+Z:\SideKick\SmartNotificationManager\SmartNotificationLibrary\SmartNotificationLibrary.csproj;x64
+Z:\SideKick\SmartNotificationManager\SmartNotificationLibrary\SmartNotificationLibrary.csproj;x64
+Z:\SideKick\SmartNotificationManager\SmartNotificationLibrary\SmartNotificationLibrary.csproj;x64
+Z:\SideKick\SmartNotificationManager\SmartNotificationLibrary\SmartNotificationLibrary.csproj;x64
+Z:\SideKick\SmartNotificationManager\SmartNotificationManager.View\SmartNotificationManager.WinUI.csproj;x64
+Z:\SideKick\SmartNotificationManager\SmartNotificationManager.View\SmartNotificationManager.WinUI.csproj;x64
 Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager.csproj;x64
+Z:\SideKick\SmartNotificationManager\WinUI3Component\WinUI3Component.csproj;x64
+Z:\SideKick\SmartNotificationManager\WinUI3Component\WinUI3Component.csproj;x64
 Z:\SideKick\SmartNotificationManager\WinUI3Component\WinUI3Component.csproj;x64
 Z:\SideKick\SmartNotificationManager\WinUI3Component\WinUI3Component.csproj;x64

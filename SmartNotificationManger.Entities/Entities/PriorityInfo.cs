@@ -1,6 +1,6 @@
 ﻿using SmartNotificationLibrary.Enums;
 
-namespace SmartNotificationManger
+namespace SmartNotificationManger.Entities
 {
     public class PriorityInfo
     {

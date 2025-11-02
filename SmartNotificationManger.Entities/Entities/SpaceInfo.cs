@@ -1,4 +1,4 @@
-﻿namespace SmartNotificationManger
+﻿namespace SmartNotificationManger.Entities
 {
     public class SpaceInfo
     {

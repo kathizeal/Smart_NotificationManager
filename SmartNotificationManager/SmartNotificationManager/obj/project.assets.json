@@ -693,6 +693,7 @@
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.26100.6901",
           "Microsoft.WindowsAppSDK": "1.8.251003001",
+          "SmartNotificationManger.Entities": "1.0.0",
           "WinCommon": "1.0.0",
           "WinLogger": "1.0.0",
           "WinSQLiteDBAdapter": "1.0.0"
@@ -711,6 +712,7 @@
           "Microsoft.Windows.SDK.BuildTools": "10.0.26100.6901",
           "Microsoft.WindowsAppSDK": "1.8.251003001",
           "SmartNotificationLibrary": "1.0.0",
+          "SmartNotificationManger.Entities": "1.0.0",
           "WinCommon": "1.0.0",
           "WinLogger": "1.0.0",
           "WinSQLiteDBAdapter": "1.0.0",
@@ -721,6 +723,19 @@
         },
         "runtime": {
           "bin/placeholder/SmartNotificationManager.WinUI.dll": {}
+        }
+      },
+      "SmartNotificationManger.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "WinCommon": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SmartNotificationManger.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SmartNotificationManger.Entities.dll": {}
         }
       },
       "WinCommon/1.0.0": {
@@ -1257,6 +1272,7 @@
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.26100.6901",
           "Microsoft.WindowsAppSDK": "1.8.251003001",
+          "SmartNotificationManger.Entities": "1.0.0",
           "WinCommon": "1.0.0",
           "WinLogger": "1.0.0",
           "WinSQLiteDBAdapter": "1.0.0"
@@ -1275,6 +1291,7 @@
           "Microsoft.Windows.SDK.BuildTools": "10.0.26100.6901",
           "Microsoft.WindowsAppSDK": "1.8.251003001",
           "SmartNotificationLibrary": "1.0.0",
+          "SmartNotificationManger.Entities": "1.0.0",
           "WinCommon": "1.0.0",
           "WinLogger": "1.0.0",
           "WinSQLiteDBAdapter": "1.0.0",
@@ -1285,6 +1302,19 @@
         },
         "runtime": {
           "bin/placeholder/SmartNotificationManager.WinUI.dll": {}
+        }
+      },
+      "SmartNotificationManger.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "WinCommon": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SmartNotificationManger.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SmartNotificationManger.Entities.dll": {}
         }
       },
       "WinCommon/1.0.0": {
@@ -1821,6 +1851,7 @@
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.26100.6901",
           "Microsoft.WindowsAppSDK": "1.8.251003001",
+          "SmartNotificationManger.Entities": "1.0.0",
           "WinCommon": "1.0.0",
           "WinLogger": "1.0.0",
           "WinSQLiteDBAdapter": "1.0.0"
@@ -1839,6 +1870,7 @@
           "Microsoft.Windows.SDK.BuildTools": "10.0.26100.6901",
           "Microsoft.WindowsAppSDK": "1.8.251003001",
           "SmartNotificationLibrary": "1.0.0",
+          "SmartNotificationManger.Entities": "1.0.0",
           "WinCommon": "1.0.0",
           "WinLogger": "1.0.0",
           "WinSQLiteDBAdapter": "1.0.0",
@@ -1849,6 +1881,19 @@
         },
         "runtime": {
           "bin/placeholder/SmartNotificationManager.WinUI.dll": {}
+        }
+      },
+      "SmartNotificationManger.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "WinCommon": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SmartNotificationManger.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SmartNotificationManger.Entities.dll": {}
         }
       },
       "WinCommon/1.0.0": {
@@ -2382,6 +2427,7 @@
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.26100.6901",
           "Microsoft.WindowsAppSDK": "1.8.251003001",
+          "SmartNotificationManger.Entities": "1.0.0",
           "WinCommon": "1.0.0",
           "WinLogger": "1.0.0",
           "WinSQLiteDBAdapter": "1.0.0"
@@ -2400,6 +2446,7 @@
           "Microsoft.Windows.SDK.BuildTools": "10.0.26100.6901",
           "Microsoft.WindowsAppSDK": "1.8.251003001",
           "SmartNotificationLibrary": "1.0.0",
+          "SmartNotificationManger.Entities": "1.0.0",
           "WinCommon": "1.0.0",
           "WinLogger": "1.0.0",
           "WinSQLiteDBAdapter": "1.0.0",
@@ -2410,6 +2457,19 @@
         },
         "runtime": {
           "bin/placeholder/SmartNotificationManager.WinUI.dll": {}
+        }
+      },
+      "SmartNotificationManger.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "WinCommon": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SmartNotificationManger.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SmartNotificationManger.Entities.dll": {}
         }
       },
       "WinCommon/1.0.0": {
@@ -4712,6 +4772,11 @@
       "type": "project",
       "path": "../../SmartNotificationManager.View/SmartNotificationManager.WinUI.csproj",
       "msbuildProject": "../../SmartNotificationManager.View/SmartNotificationManager.WinUI.csproj"
+    },
+    "SmartNotificationManger.Entities/1.0.0": {
+      "type": "project",
+      "path": "../../SmartNotificationManger.Entities/SmartNotificationManger.Entities.csproj",
+      "msbuildProject": "../../SmartNotificationManger.Entities/SmartNotificationManger.Entities.csproj"
     },
     "WinCommon/1.0.0": {
       "type": "project",

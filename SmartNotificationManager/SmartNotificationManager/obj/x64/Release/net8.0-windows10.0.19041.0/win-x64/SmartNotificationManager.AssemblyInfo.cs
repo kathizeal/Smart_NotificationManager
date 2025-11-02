@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartNotificationManager")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d036f9d62645dc802cd1aca4cbda03ce9122f4f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45f81c64b6b9fcc44956effe8e071af673faec0c")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartNotificationManager")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartNotificationManager")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
