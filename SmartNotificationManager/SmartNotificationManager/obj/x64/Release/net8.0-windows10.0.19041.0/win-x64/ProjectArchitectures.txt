@@ -1,0 +1,1 @@
+Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager.csproj;x64

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SmartNotificationManager (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "SmartNotificationManager (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
