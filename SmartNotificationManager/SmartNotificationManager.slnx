@@ -4,6 +4,13 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Project Path="../SmartNotificationLibrary/SmartNotificationLibrary.csproj" Id="d74345e7-2784-4fcc-ad7a-3dc2a2b1cbd8">
+    <Platform Solution="Release|x64" Project="x64" />
+  </Project>
+  <Project Path="../SmartNotificationManager.View/SmartNotificationManager.WinUI.csproj" Id="79949be8-99e8-4a7a-b0f6-214bcd98a2ca">
+    <Platform Solution="Release|x64" Project="x64" />
+  </Project>
+  <Project Path="../SmartNotificationManger.Entities/SmartNotificationManger.Entities.csproj" />
   <Project Path="../WinCommon/WinCommon.csproj">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
@@ -12,6 +19,9 @@
   </Project>
   <Project Path="../WinSQLiteDBAdapter/WinSQLiteDBAdapter.csproj">
     <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="../WinUI3Component/WinUI3Component.csproj" Id="6e9be646-02b4-4347-ac3f-16657e6abcd2">
+    <Platform Solution="Release|x64" Project="x64" />
   </Project>
   <Project Path="SmartNotificationManager/SmartNotificationManager.csproj">
     <Platform Solution="*|ARM64" Project="ARM64" />

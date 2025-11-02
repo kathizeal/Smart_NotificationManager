@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
-using Microsoft.UI.Xaml.Shapes;
-using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using Microsoft.UI.Xaml;
+using SmartNotificationManager.WinUI.Manager;
+using System;
+using WinCommon.Util;
+using WinLogger;
+using WinLogger.Contract;
+using WinUI3Component.Util;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -26,6 +16,7 @@ namespace SmartNotificationManager
     /// </summary>
     public partial class App : Application
     {
+        private static readonly ILogger Logger = LogManager.GetLogger();
         private Window? _window;
 
         /// <summary>
@@ -34,7 +25,13 @@ namespace SmartNotificationManager
         /// </summary>
         public App()
         {
+            InitializeDependencyInjection();
             InitializeComponent();
+            WinUI3AppInfo.Initialize("INotify");
+            ZAppInfoProvider.Initialize(WinUI3AppInfo.Instance);
+
+            Logger.Info(LogManager.GetCallerInfo(), "App constructor called");
+
         }
 
         /// <summary>
@@ -46,5 +43,24 @@ namespace SmartNotificationManager
             _window = new MainWindow();
             _window.Activate();
         }
+
+        private void InitializeDependencyInjection()
+        {
+            try
+            {
+                Logger.Info(LogManager.GetCallerInfo(), "Initializing dependency injection services");
+
+                // Initialize the main DI container
+                InitializationManager.Instance.InitializeDI();
+
+                Logger.Info(LogManager.GetCallerInfo(), "Dependency injection services initialized successfully");
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(LogManager.GetCallerInfo(), $"Error initializing dependency injection: {ex.Message}");
+                // Don't throw here as we want the app to continue even if DI fails
+            }
+        }
+
     }
 }

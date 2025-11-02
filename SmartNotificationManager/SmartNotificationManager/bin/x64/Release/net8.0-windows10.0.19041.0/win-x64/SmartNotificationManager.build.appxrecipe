@@ -25,6 +25,9 @@
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
+    <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\WinUI3Component\bin\x64\Release\net8.0-windows10.0.19041.0\WinUI3Component.pri">
+      <PackagePath>WinUI3Component.pri</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\SmartNotificationManager.runtimeconfig.json">
       <PackagePath>SmartNotificationManager.runtimeconfig.json</PackagePath>
     </AppxPackagedFile>
@@ -85,6 +88,12 @@
     <AppxPackagedFile Include="Z:\Kathi\.nuget\packages\microsoft.windowsappsdk.ml\1.8.2095\runtimes\win-x64\native\onnxruntime.lib">
       <PackagePath>onnxruntime.lib</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\Kathi\.nuget\packages\sqlitepclraw.lib.e_sqlcipher\2.1.10\runtimes\win-x64\native\e_sqlcipher.dll">
+      <PackagePath>e_sqlcipher.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\Kathi\.nuget\packages\sqlitepclraw.lib.e_sqlite3\2.1.2\runtimes\win-x64\native\e_sqlite3.dll">
+      <PackagePath>e_sqlite3.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\Kathi\.nuget\packages\microsoft.web.webview2\1.0.3179.45\runtimes\win-x64\native_uap\Microsoft.Web.WebView2.Core.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.dll</PackagePath>
     </AppxPackagedFile>
@@ -99,6 +108,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\Microsoft.WinUI.dll">
       <PackagePath>Microsoft.WinUI.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\WinLogger.dll">
+      <PackagePath>WinLogger.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="Z:\SideKick\SmartNotificationManager\SmartNotificationManager\SmartNotificationManager\obj\x64\Release\net8.0-windows10.0.19041.0\win-x64\R2R\SmartNotificationManager.dll">
       <PackagePath>SmartNotificationManager.dll</PackagePath>
