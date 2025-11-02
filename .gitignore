@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
@@ -14,3 +14,5 @@
 # Ignore bin and obj directories everywhere
 **/bin/
 **/obj/
+SmartNotificationManager/SmartNotificationManager.Entities/bin/
+SmartNotificationManager/SmartNotificationManager.Entities/obj/
