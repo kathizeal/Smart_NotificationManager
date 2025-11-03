@@ -43,6 +43,9 @@ namespace SmartNotificationManager.View.Services
             {
                 Debug.WriteLine("Starting Background Notification Service...");
 
+                InstalledAppsService installedAppsService = new InstalledAppsService();
+
+                await installedAppsService.GetAllInstalledAppsAsync();
 
                 //TODO: Get ViewModel
                 //_viewModel = KToastDIServiceProvider.Instance.GetService<KToastListVMBase>();

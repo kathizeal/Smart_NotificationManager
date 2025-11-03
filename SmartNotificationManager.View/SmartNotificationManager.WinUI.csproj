@@ -20,5 +20,8 @@
     <ProjectReference Include="..\WinSQLiteDBAdapter\WinSQLiteDBAdapter.csproj" />
     <ProjectReference Include="..\WinUI3Component\WinUI3Component.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
   
 </Project>

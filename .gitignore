@@ -14,3 +14,22 @@
 # Ignore bin and obj directories everywhere
 **/bin/
 **/obj/
+/SmartNotificationManger.Entities/obj/Debug/net8.0/SmartNotificationManger.Entities.AssemblyInfo.cs
+/SmartNotificationManger.Entities/obj/Debug/net8.0/SmartNotificationManger.Entities.AssemblyInfoInputs.cache
+/SmartNotificationManger.Entities/obj/Debug/net8.0/SmartNotificationManger.Entities.csproj.AssemblyReference.cache
+/SmartNotificationManger.Entities/obj/Release/net8.0/SmartNotificationManger.Entities.AssemblyInfo.cs
+/SmartNotificationManger.Entities/obj/Release/net8.0/SmartNotificationManger.Entities.AssemblyInfoInputs.cache
+/SmartNotificationManager/SmartNotificationManager/obj/x64/Debug/net8.0-windows10.0.19041.0/win-x64/App.g.cs
+/SmartNotificationManager/SmartNotificationManager/obj/x64/Debug/net8.0-windows10.0.19041.0/win-x64/MainWindow.g.cs
+/SmartNotificationManager/SmartNotificationManager/obj/x64/Debug/net8.0-windows10.0.19041.0/win-x64/SmartNotificationManager.AssemblyInfo.cs
+/SmartNotificationManager/SmartNotificationManager/obj/x64/Debug/net8.0-windows10.0.19041.0/win-x64/SmartNotificationManager.AssemblyInfoInputs.cache
+/SmartNotificationManager/SmartNotificationManager/obj/x64/Debug/net8.0-windows10.0.19041.0/win-x64/SmartNotificationManager.assets.cache
+/SmartNotificationManager/SmartNotificationManager/obj/x64/Debug/net8.0-windows10.0.19041.0/win-x64/XamlSaveStateFile.xml
+/SmartNotificationManager/SmartNotificationManager/obj/x64/Debug/net8.0-windows10.0.19041.0/win-x64/SmartNotificationManager.csproj.AssemblyReference.cache
+/SmartNotificationManager/SmartNotificationManager/obj/x64/Debug/net8.0-windows10.0.19041.0/win-x64/XamlTypeInfo.g.cs
+/SmartNotificationManager/SmartNotificationManager/obj/x64/Release/net8.0-windows10.0.19041.0/win-x64/SmartNotificationManager.AssemblyInfoInputs.cache
+/SmartNotificationManager/SmartNotificationManager/obj/x64/Release/net8.0-windows10.0.19041.0/win-x64/SmartNotificationManager.AssemblyInfo.cs
+/SmartNotificationManager/SmartNotificationManager/obj/project.assets.json
+/SmartNotificationManager/SmartNotificationManager/obj/project.nuget.cache
+/SmartNotificationManager/SmartNotificationManager/obj/SmartNotificationManager.csproj.nuget.dgspec.json
+/SmartNotificationManager/SmartNotificationManager/obj/SmartNotificationManager.csproj.nuget.g.props

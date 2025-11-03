@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using SmartNotificationLibrary.DBHandler;
+using SmartNotificationLibrary.DBHandler.Contract;
 using WinCommon.DI;
 
 namespace SmartNotificationLibrary.DI
@@ -14,7 +16,7 @@ namespace SmartNotificationLibrary.DI
 
         public void Initialize(IServiceCollection services)
         {
-            //services.AddSingleton<INotifyDBHandler, NotifyDBHandler>();
+            services.AddSingleton<INotifyDBHandler, NotifyDBHandler>();
             //services.AddSingleton<IGetKToastsDataManager, GetKToastDataManager>();
             //services.AddSingleton<IUpdateKToastDataManager, UpdateKToastDataManager>();
             //services.AddSingleton<IGetAllSpaceDataManager, GetAllSpaceDataManager>();

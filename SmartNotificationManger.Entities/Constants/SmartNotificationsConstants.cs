@@ -2,11 +2,12 @@
 {
     public static class SmartNotificationConstants
     {
-        public const string ApplicationName = "SmartNotification";
+        public const string ApplicationName = "SmartNotificationManager";
 
         public const string CurrentUser = "DefaultUser";
-    }
 
+        public const string AppPackageId = "5827c51b-4b44-4894-89ef-ff8414351f60";
+    }
     public static class KRPackageProfileConstant
     {
         public const string DefaultPackageFamilyName = "DefaultPackageFamilyName";
