@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
@@ -33,3 +33,5 @@
 /SmartNotificationManager/SmartNotificationManager/obj/project.nuget.cache
 /SmartNotificationManager/SmartNotificationManager/obj/SmartNotificationManager.csproj.nuget.dgspec.json
 /SmartNotificationManager/SmartNotificationManager/obj/SmartNotificationManager.csproj.nuget.g.props
+SmartNotificationManager/SmartNotificationManager.Entities/bin/
+SmartNotificationManager/SmartNotificationManager.Entities/obj/
