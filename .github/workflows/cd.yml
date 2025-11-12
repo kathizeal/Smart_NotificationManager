@@ -1,0 +1,83 @@
+name: CD - Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (e.g., v1.0.0)'
+        required: true
+        type: string
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+    
+    permissions:
+      contents: write
+    
+    strategy:
+      matrix:
+        platform: [x64, x86, ARM64]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET 9
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+        
+    - name: Display .NET version
+      run: dotnet --version
+      
+    - name: Restore dependencies
+      run: dotnet restore SmartNotificationManager/SmartNotificationManager.sln
+      
+    - name: Build solution
+      run: dotnet build SmartNotificationManager/SmartNotificationManager.sln --configuration Release --no-restore /p:Platform=${{ matrix.platform }}
+      
+    - name: Publish application
+      run: dotnet publish SmartNotificationManager/SmartNotificationManager/SmartNotificationManager.csproj --configuration Release --runtime win-${{ matrix.platform }} --self-contained true /p:PublishSingleFile=false /p:Platform=${{ matrix.platform }} --output ./publish/${{ matrix.platform }}
+      
+    - name: Create archive
+      run: |
+        Compress-Archive -Path ./publish/${{ matrix.platform }}/* -DestinationPath ./SmartNotificationManager-${{ matrix.platform }}.zip
+      shell: pwsh
+      
+    - name: Upload release artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: release-${{ matrix.platform }}
+        path: ./SmartNotificationManager-${{ matrix.platform }}.zip
+        retention-days: 30
+
+  create-release:
+    needs: build-and-release
+    runs-on: windows-latest
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+    
+    permissions:
+      contents: write
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Download all artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: ./artifacts
+        
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ./artifacts/**/*.zip
+        draft: false
+        prerelease: false
+        generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -35,3 +35,29 @@
 /SmartNotificationManager/SmartNotificationManager/obj/SmartNotificationManager.csproj.nuget.g.props
 SmartNotificationManager/SmartNotificationManager.Entities/bin/
 SmartNotificationManager/SmartNotificationManager.Entities/obj/
+
+# Build results
+[Pp]ublish/
+*.zip
+
+# VS Code
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+packages/
+
+# Test results
+TestResults/
+[Tt]est[Rr]esult*/
+*.trx
+
+# Build artifacts from CI/CD
+artifacts/
