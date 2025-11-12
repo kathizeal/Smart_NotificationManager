@@ -10,6 +10,7 @@
   <Project Path="../SmartNotificationManager.View/SmartNotificationManager.WinUI.csproj" Id="79949be8-99e8-4a7a-b0f6-214bcd98a2ca">
     <Platform Solution="*|x64" Project="x64" />
   </Project>
+  <Project Path="../SmartNotificationManager.ViewModel/SmartNotificationManager.ViewModel.csproj" Id="379a4076-02c8-4149-8939-7f06021126f1" />
   <Project Path="../SmartNotificationManger.Entities/SmartNotificationManger.Entities.csproj">
     <Platform Solution="Debug|x64" Project="x64" />
   </Project>

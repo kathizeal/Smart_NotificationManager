@@ -1,5 +1,6 @@
-﻿using Microsoft.UI;
-using Microsoft.UI.Xaml;
+﻿using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using SmartNotificationManager.View.Controls;
 using SmartNotificationManager.View.Services;
 using SmartNotificationManager.WinUI.Manager;
 using System;
@@ -46,9 +47,6 @@ namespace SmartNotificationManager
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
-            _window = new MainWindow();
-            _window.Activate();
-
             try
             {
                 Logger.Info(LogManager.GetCallerInfo(), "Application launched");
@@ -69,8 +67,18 @@ namespace SmartNotificationManager
                 //m_window.Activate();
 
                 _window = new MainWindow();
-                _window.Activate();
 
+                // Create a Frame to act as the navigation context and navigate to the first page
+                Frame rootFrame = new Frame();
+                rootFrame.NavigationFailed += RootFrame_NavigationFailed; ;
+                // Navigate to the first page, configuring the new page
+                // by passing required information as a navigation parameter
+                rootFrame.Navigate(typeof(HomePage), args.Arguments);
+
+                // Place the frame in the current Window
+                _window.Content = rootFrame;
+                // Ensure the MainWindow is active
+                _window.Activate();
 
                 Logger.Info(LogManager.GetCallerInfo(), "Main window created and activated");
             }
@@ -78,6 +86,11 @@ namespace SmartNotificationManager
             {
                 Logger.Error(LogManager.GetCallerInfo(), $"Error during application launch: {ex.Message}");
             }
+        }
+
+        private void RootFrame_NavigationFailed(object sender, Microsoft.UI.Xaml.Navigation.NavigationFailedEventArgs e)
+        {
+            Logger.Error(LogManager.GetCallerInfo(), $"Failed to load Page {e.SourcePageType.FullName}: {e.Exception.Message}");
         }
 
         private void InitializeDependencyInjection()
@@ -122,37 +135,37 @@ namespace SmartNotificationManager
         {
             try
             {
-//                // Run tray diagnostics first (only in debug mode)
-//#if DEBUG
-//                Debug.WriteLine("Running tray diagnostics...");
-//                await TrayDiagnostics.RunTrayDiagnosticsAsync();
-//                TrayDiagnostics.CheckNotificationAreaSettings();
-//#endif
+                //                // Run tray diagnostics first (only in debug mode)
+                //#if DEBUG
+                //                Debug.WriteLine("Running tray diagnostics...");
+                //                await TrayDiagnostics.RunTrayDiagnosticsAsync();
+                //                TrayDiagnostics.CheckNotificationAreaSettings();
+                //#endif
 
-//                // Initialize tray manager first
-//                _trayManager = new TrayManager();
-//                _trayManager.ShowMainWindowRequested += OnShowMainWindowRequested;
-//                _trayManager.ExitApplicationRequested += OnExitApplicationRequested;
+                //                // Initialize tray manager first
+                //                _trayManager = new TrayManager();
+                //                _trayManager.ShowMainWindowRequested += OnShowMainWindowRequested;
+                //                _trayManager.ExitApplicationRequested += OnExitApplicationRequested;
 
-//                try
-//                {
-//                    _trayManager.Initialize();
-//                    Logger.Info(LogManager.GetCallerInfo(), "Tray manager initialized successfully");
+                //                try
+                //                {
+                //                    _trayManager.Initialize();
+                //                    Logger.Info(LogManager.GetCallerInfo(), "Tray manager initialized successfully");
 
-//                    // Test the tray icon by showing a welcome notification
-//                    _trayManager.ShowBalloonTip("INotify Started", "INotify is now running in the system tray. Click the icon to show the window.");
-//                }
-//                catch (Exception trayEx)
-//                {
-//                    Logger.Warning(LogManager.GetCallerInfo(), $"Tray manager initialization had issues but continuing: {trayEx.Message}");
+                //                    // Test the tray icon by showing a welcome notification
+                //                    _trayManager.ShowBalloonTip("INotify Started", "INotify is now running in the system tray. Click the icon to show the window.");
+                //                }
+                //                catch (Exception trayEx)
+                //                {
+                //                    Logger.Warning(LogManager.GetCallerInfo(), $"Tray manager initialization had issues but continuing: {trayEx.Message}");
 
-//                    // Run quick tray test to help diagnose the issue
-//#if DEBUG
-//                    Debug.WriteLine("Running quick tray test due to initialization issues...");
-//                    await TrayDiagnostics.QuickTrayTestAsync();
-//#endif
-//                    // Continue without tray functionality if it fails
-//                }
+                //                    // Run quick tray test to help diagnose the issue
+                //#if DEBUG
+                //                    Debug.WriteLine("Running quick tray test due to initialization issues...");
+                //                    await TrayDiagnostics.QuickTrayTestAsync();
+                //#endif
+                //                    // Continue without tray functionality if it fails
+                //                }
 
                 // Initialize background notification service
                 _backgroundService = new BackgroundNotificationService();

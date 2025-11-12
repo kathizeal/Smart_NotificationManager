@@ -2,6 +2,7 @@
 using SmartNotificationLibrary.Enums;
 using SmartNotificationManger.Entities;
 using SmartNotificationManger.Entities.Constants;
+using SmartNotificationManger.Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,8 @@ namespace SmartNotificationLibrary.DBHandler
                 typeof(KSpaceMapper),
                 typeof(KCustomPriorityApp), // Add custom priority model
                 typeof(KFeedback), // Add feedback model
-                typeof(KSoundMapper) // Add sound mapping model
+                typeof(KSoundMapper), // Add sound mapping model
+                typeof(ExcludePackageMapper)
             };
             return dbModels;
         }
@@ -608,9 +610,23 @@ namespace SmartNotificationLibrary.DBHandler
             }
         }
 
+
+
         #endregion
 
+        public IList<KRPackageProfile> GetExcludedPackagesFromDB(string userId)
+        {
+            IDBConnection connection = GetDBConnection(userId);
 
+            string query = $@"SELECT P.* FROM {nameof(KRPackageProfile)} P 
+                                     INNER JOIN {nameof(ExcludePackageMapper)} E 
+                                     ON P.{nameof(KRPackageProfile.PackageFamilyName)} = E.{nameof(ExcludePackageMapper.PackageFamilyName)} 
+                                     WHERE E.{nameof(ExcludePackageMapper.UserId)} = ?";
+
+            var excludedPackages = connection.Query<KRPackageProfile>(query, userId);
+
+            return excludedPackages?.ToList() ?? new List<KRPackageProfile>();
+        }
 
 
 

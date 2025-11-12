@@ -1,4 +1,5 @@
-﻿using SmartNotificationLibrary.Enums;
+﻿using SmartNotificationLibrary.Domain;
+using SmartNotificationLibrary.Enums;
 using SmartNotificationManger;
 using SmartNotificationManger.Entities;
 using SmartNotificationManger.Entities.Model;
@@ -156,6 +157,9 @@ namespace SmartNotificationLibrary.DBHandler.Contract
         int GetPackageNotificationCount(string packageFamilyName, string userId);
 
         #endregion
+
+
+        IList<KRPackageProfile> GetExcludedPackagesFromDB(string userId);
     }
 
 
