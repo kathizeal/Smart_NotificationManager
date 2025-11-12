@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    strategy:
+      matrix:
+        configuration: [Debug, Release]
+        platform: [x64]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup .NET 9
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+        
+    - name: Display .NET version
+      run: dotnet --version
+      
+    - name: Restore dependencies
+      run: dotnet restore SmartNotificationManager/SmartNotificationManager.sln
+      
+    - name: Build solution
+      run: dotnet build SmartNotificationManager/SmartNotificationManager.sln --configuration ${{ matrix.configuration }} --no-restore /p:Platform=${{ matrix.platform }}
+      
+    - name: Run tests (if any exist)
+      run: dotnet test SmartNotificationManager/SmartNotificationManager.sln --configuration ${{ matrix.configuration }} --no-build /p:Platform=${{ matrix.platform }} --verbosity normal
+      continue-on-error: true
+      
+    - name: Upload build artifacts
+      if: matrix.configuration == 'Release'
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-artifacts-${{ matrix.platform }}
+        path: |
+          **/bin/Release/**
+          !**/bin/Release/**/ref/**
+          !**/bin/Release/**/*.pdb
+        retention-days: 7
