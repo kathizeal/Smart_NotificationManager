@@ -1,5 +1,8 @@
 # Smart Notification Manager
 
+[![CI](https://github.com/kathizeal/Smart_NotificationManager/actions/workflows/ci.yml/badge.svg)](https://github.com/kathizeal/Smart_NotificationManager/actions/workflows/ci.yml)
+[![CD - Release](https://github.com/kathizeal/Smart_NotificationManager/actions/workflows/cd.yml/badge.svg)](https://github.com/kathizeal/Smart_NotificationManager/actions/workflows/cd.yml)
+
 A WinUI3 notification management application built with .NET 9.
 
 ## Project Structure
@@ -49,6 +52,8 @@ The project includes automated CI/CD workflows using GitHub Actions:
 
 ### Continuous Integration (CI)
 
+**Workflow**: `.github/workflows/ci.yml`
+
 - **Trigger**: Push or pull request to main/master/develop branches
 - **Platforms**: x64
 - **Configurations**: Debug and Release
@@ -58,7 +63,20 @@ The project includes automated CI/CD workflows using GitHub Actions:
   - Run tests (if available)
   - Upload build artifacts (Release only)
 
+### Pull Request Validation
+
+**Workflow**: `.github/workflows/pr-validation.yml`
+
+- **Trigger**: Pull request opened, synchronized, or reopened
+- **Platform**: x64
+- **Configurations**: Debug and Release
+- **Actions**:
+  - Validate both Debug and Release builds
+  - Post build status comment on PR
+
 ### Continuous Deployment (CD)
+
+**Workflow**: `.github/workflows/cd.yml`
 
 - **Trigger**: Push tags matching `v*.*.*` pattern (e.g., v1.0.0) or manual workflow dispatch
 - **Platforms**: x64, x86, ARM64
