@@ -1,0 +1,9 @@
+[submodule "libs/WinCommon"]
+	path = libs/WinCommon
+	url = https://github.com/kathizeal/WinCommon.git
+[submodule "libs/WinSQLiteDBAdapter"]
+	path = libs/WinSQLiteDBAdapter
+	url = https://github.com/kathizeal/WinSQLiteDBAdapter.git
+[submodule "libs/WinLogger"]
+	path = libs/WinLogger
+	url = https://github.com/kathizeal/WinLogger.git
