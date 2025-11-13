@@ -4,6 +4,9 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path="../SupportedOSVersions.props" />
+  </Folder>
   <Project Path="../SmartNotificationLibrary/SmartNotificationLibrary.csproj" Id="d74345e7-2784-4fcc-ad7a-3dc2a2b1cbd8">
     <Platform Solution="*|x64" Project="x64" />
   </Project>

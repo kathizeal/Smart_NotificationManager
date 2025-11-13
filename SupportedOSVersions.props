@@ -1,0 +1,22 @@
+<Project>
+  <PropertyGroup>
+    <!-- Set your desired OS version numbers below -->
+    <!-- For example, Windows 10 version 2004: 10.0.19041.0 (recommended min for .NET 9 Win targets) -->
+    <!-- For example, Windows 11 version 22H2: 10.0.22621.0 -->
+    <MinimumOSVersion>10.0.19041.0</MinimumOSVersion>
+    <MaximumOSVersion>10.0.22621.0</MaximumOSVersion>
+  </PropertyGroup>
+
+  <!-- Apply these to WinUI or general Windows libraries, supporting all .NET versions including .NET 9 -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0-windows10.0.19041.0' Or 
+                            '$(TargetFramework)' == 'net7.0-windows10.0.19041.0' Or 
+                            '$(TargetFramework)' == 'net8.0-windows10.0.19041.0' Or 
+                            '$(TargetFramework)' == 'net9.0-windows10.0.19041.0' Or
+                            $(TargetFramework.StartsWith('net6.0-windows')) Or
+                            $(TargetFramework.StartsWith('net7.0-windows')) Or
+                            $(TargetFramework.StartsWith('net8.0-windows')) Or
+                            $(TargetFramework.StartsWith('net9.0-windows'))">
+    <TargetPlatformMinVersion>$(MinimumOSVersion)</TargetPlatformMinVersion>
+    <TargetPlatformMaxVersion>$(MaximumOSVersion)</TargetPlatformMaxVersion>
+  </PropertyGroup>
+</Project>

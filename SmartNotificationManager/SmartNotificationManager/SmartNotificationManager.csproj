@@ -1,8 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Import the shared OS version props -->
+  <Import Project="..\..\SupportedOSVersions.props" />
+  
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net9.0-windows10.0.19041.0</TargetFramework>
-    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <!-- TargetPlatformMinVersion and TargetPlatformMaxVersion are now set via SupportedOSVersions.props -->
     <RootNamespace>SmartNotificationManager</RootNamespace>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <Platforms>x86;x64;ARM64</Platforms>
@@ -13,6 +16,7 @@
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  
   <ItemGroup>
     <Compile Remove="bin\**" />
     <Compile Remove="obj\**" />
@@ -46,10 +50,12 @@
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
   </ItemGroup>
+  
   <ItemGroup>
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.6901" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.251003001" />
   </ItemGroup>
+  
   <ItemGroup>
     <ProjectReference Include="..\..\SmartNotificationLibrary\SmartNotificationLibrary.csproj" />
     <ProjectReference Include="..\..\SmartNotificationManager.View\SmartNotificationManager.WinUI.csproj" />
@@ -73,9 +79,11 @@
     <PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
     <PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
   </PropertyGroup>
+  
   <ItemGroup>
     <PRIResource Remove="bin\**" />
   </ItemGroup>
+  
   <ItemGroup>
     <PRIResource Remove="obj\**" />
   </ItemGroup>
