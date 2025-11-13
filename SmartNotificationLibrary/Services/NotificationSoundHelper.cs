@@ -1,5 +1,4 @@
-﻿using Microsoft.Windows.AppNotifications.Builder;
-using SmartNotificationLibrary.Enums;
+﻿using SmartNotificationLibrary.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +9,7 @@ namespace SmartNotificationLibrary.Services
 {
     /// <summary>
     /// Helper class for notification sound management
-    /// Handles both custom sounds (SetAudioUri) and system sounds (SetAudioEvent)
+    /// Handles both custom sounds (SetAudioUri) and system sounds (URI strings)
     /// </summary>
     public static class NotificationSoundHelper
     {
@@ -18,7 +17,7 @@ namespace SmartNotificationLibrary.Services
         private const int CustomSoundsThreshold = 15;
 
         /// <summary>
-        /// Determines if a sound is a custom sound (should use SetAudioUri) or system sound (should use SetAudioEvent)
+        /// Determines if a sound is a custom sound (should use SetAudioUri) or system sound (should use URI string)
         /// </summary>
         public static bool IsCustomSound(NotificationSounds sound)
         {
@@ -26,7 +25,7 @@ namespace SmartNotificationLibrary.Services
         }
 
         /// <summary>
-        /// Determines if a sound is a system sound (should use SetAudioEvent)
+        /// Determines if a sound is a system sound (should use URI string)
         /// </summary>
         public static bool IsSystemSound(NotificationSounds sound)
         {
@@ -56,39 +55,55 @@ namespace SmartNotificationLibrary.Services
         }
 
         /// <summary>
-        /// Maps NotificationSounds to AppNotificationSoundEvent for system sounds
+        /// Maps NotificationSounds to ms-winsoundevent URI strings for system sounds
+        /// This replaces the Windows-specific AppNotificationSoundEvent enum
         /// </summary>
-        public static AppNotificationSoundEvent GetSystemSoundEvent(NotificationSounds sound)
+        public static string GetSystemSoundEventUri(NotificationSounds sound)
         {
             return sound switch
             {
-                NotificationSounds.SystemDefault => AppNotificationSoundEvent.Default,
-                NotificationSounds.SystemIM => AppNotificationSoundEvent.IM,
-                NotificationSounds.SystemMail => AppNotificationSoundEvent.Mail,
-                NotificationSounds.SystemReminder => AppNotificationSoundEvent.Reminder,
-                NotificationSounds.SystemSMS => AppNotificationSoundEvent.SMS,
-                NotificationSounds.SystemAlarm => AppNotificationSoundEvent.Alarm,
-                NotificationSounds.SystemAlarm2 => AppNotificationSoundEvent.Alarm2,
-                NotificationSounds.SystemAlarm3 => AppNotificationSoundEvent.Alarm3,
-                NotificationSounds.SystemAlarm4 => AppNotificationSoundEvent.Alarm4,
-                NotificationSounds.SystemAlarm5 => AppNotificationSoundEvent.Alarm5,
-                NotificationSounds.SystemAlarm6 => AppNotificationSoundEvent.Alarm6,
-                NotificationSounds.SystemAlarm7 => AppNotificationSoundEvent.Alarm7,
-                NotificationSounds.SystemAlarm8 => AppNotificationSoundEvent.Alarm8,
-                NotificationSounds.SystemAlarm9 => AppNotificationSoundEvent.Alarm9,
-                NotificationSounds.SystemAlarm10 => AppNotificationSoundEvent.Alarm10,
-                NotificationSounds.SystemCall => AppNotificationSoundEvent.Call,
-                NotificationSounds.SystemCall2 => AppNotificationSoundEvent.Call2,
-                NotificationSounds.SystemCall3 => AppNotificationSoundEvent.Call3,
-                NotificationSounds.SystemCall4 => AppNotificationSoundEvent.Call4,
-                NotificationSounds.SystemCall5 => AppNotificationSoundEvent.Call5,
-                NotificationSounds.SystemCall6 => AppNotificationSoundEvent.Call6,
-                NotificationSounds.SystemCall7 => AppNotificationSoundEvent.Call7,
-                NotificationSounds.SystemCall8 => AppNotificationSoundEvent.Call8,
-                NotificationSounds.SystemCall9 => AppNotificationSoundEvent.Call9,
-                NotificationSounds.SystemCall10 => AppNotificationSoundEvent.Call10,
-                _ => AppNotificationSoundEvent.Default
+                NotificationSounds.SystemDefault => "ms-winsoundevent:Notification.Default",
+                NotificationSounds.SystemIM => "ms-winsoundevent:Notification.IM",
+                NotificationSounds.SystemMail => "ms-winsoundevent:Notification.Mail",
+                NotificationSounds.SystemReminder => "ms-winsoundevent:Notification.Reminder",
+                NotificationSounds.SystemSMS => "ms-winsoundevent:Notification.SMS",
+                NotificationSounds.SystemAlarm => "ms-winsoundevent:Notification.Looping.Alarm",
+                NotificationSounds.SystemAlarm2 => "ms-winsoundevent:Notification.Looping.Alarm2",
+                NotificationSounds.SystemAlarm3 => "ms-winsoundevent:Notification.Looping.Alarm3",
+                NotificationSounds.SystemAlarm4 => "ms-winsoundevent:Notification.Looping.Alarm4",
+                NotificationSounds.SystemAlarm5 => "ms-winsoundevent:Notification.Looping.Alarm5",
+                NotificationSounds.SystemAlarm6 => "ms-winsoundevent:Notification.Looping.Alarm6",
+                NotificationSounds.SystemAlarm7 => "ms-winsoundevent:Notification.Looping.Alarm7",
+                NotificationSounds.SystemAlarm8 => "ms-winsoundevent:Notification.Looping.Alarm8",
+                NotificationSounds.SystemAlarm9 => "ms-winsoundevent:Notification.Looping.Alarm9",
+                NotificationSounds.SystemAlarm10 => "ms-winsoundevent:Notification.Looping.Alarm10",
+                NotificationSounds.SystemCall => "ms-winsoundevent:Notification.Looping.Call",
+                NotificationSounds.SystemCall2 => "ms-winsoundevent:Notification.Looping.Call2",
+                NotificationSounds.SystemCall3 => "ms-winsoundevent:Notification.Looping.Call3",
+                NotificationSounds.SystemCall4 => "ms-winsoundevent:Notification.Looping.Call4",
+                NotificationSounds.SystemCall5 => "ms-winsoundevent:Notification.Looping.Call5",
+                NotificationSounds.SystemCall6 => "ms-winsoundevent:Notification.Looping.Call6",
+                NotificationSounds.SystemCall7 => "ms-winsoundevent:Notification.Looping.Call7",
+                NotificationSounds.SystemCall8 => "ms-winsoundevent:Notification.Looping.Call8",
+                NotificationSounds.SystemCall9 => "ms-winsoundevent:Notification.Looping.Call9",
+                NotificationSounds.SystemCall10 => "ms-winsoundevent:Notification.Looping.Call10",
+                _ => "ms-winsoundevent:Notification.Default"
             };
+        }
+
+        /// <summary>
+        /// Gets the appropriate sound URI for any notification sound (custom or system)
+        /// This is the unified method to use instead of separate custom/system approaches
+        /// </summary>
+        public static string GetSoundUri(NotificationSounds sound)
+        {
+            if (sound == NotificationSounds.None)
+                return "ms-winsoundevent:Notification.Default";
+
+            if (IsCustomSound(sound))
+                return GetCustomSoundPath(sound);
+
+            return GetSystemSoundEventUri(sound);
         }
 
         /// <summary>

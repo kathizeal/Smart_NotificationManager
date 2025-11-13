@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WinCommon.Util;
-using Windows.UI.Notifications;
 using WinLogger;
 using WinSQLiteDBAdapter.Contract;
 

@@ -323,8 +323,10 @@ namespace SmartNotificationManager.View.Services
                 if (NotificationSoundHelper.IsSystemSound(sound))
                 {
                     // For system sounds in legacy mode, map to equivalent system sound URIs
-                    var systemSound = NotificationSoundHelper.GetSystemSoundEvent(sound);
-                    return $"ms-winsoundevent:Notification.{systemSound}";
+                    // New approach - Cross-platform
+                    var soundUri = NotificationSoundHelper.GetSoundUri(sound);
+                    return soundUri;
+                    //builder.SetAudioUri(new Uri(soundUri)); return $"ms-winsoundevent:Notification.{systemSound}";
                 }
 
                 return "ms-winsoundevent:Notification.Default";
@@ -338,7 +340,7 @@ namespace SmartNotificationManager.View.Services
 
         /// <summary>
         /// Applies notification sound to AppNotificationBuilder based on sound type
-        /// Uses SetAudioUri for custom sounds and SetAudioEvent for system sounds
+        /// Uses SetAudioUri for all sounds (both custom and system) with URI strings
         /// </summary>
         private void ApplyNotificationSound(AppNotificationBuilder builder, NotificationSounds sound)
         {
@@ -346,8 +348,8 @@ namespace SmartNotificationManager.View.Services
             {
                 if (sound == NotificationSounds.None)
                 {
-                    // Use default system sound
-                    builder.SetAudioEvent(AppNotificationSoundEvent.Default, AppNotificationAudioLooping.None);
+                    // Use default system sound - use URI instead of enum
+                    builder.SetAudioUri(new Uri("ms-winsoundevent:Notification.Default"));
                     Debug.WriteLine($"🔊 Applied default system sound");
                     return;
                 }
@@ -364,20 +366,20 @@ namespace SmartNotificationManager.View.Services
                     catch (Exception ex)
                     {
                         Debug.WriteLine($"⚠️ Failed to set custom sound {sound}: {ex.Message}, falling back to default");
-                        builder.SetAudioEvent(AppNotificationSoundEvent.Default, AppNotificationAudioLooping.None);
+                        builder.SetAudioUri(new Uri("ms-winsoundevent:Notification.Default"));
                     }
                 }
                 else if (NotificationSoundHelper.IsSystemSound(sound))
                 {
-                    // System sound - use SetAudioEvent
-                    var systemSound = NotificationSoundHelper.GetSystemSoundEvent(sound);
-                    builder.SetAudioEvent(systemSound, AppNotificationAudioLooping.None);
-                    Debug.WriteLine($"🔊 Applied system sound: {sound} -> {systemSound}");
+                    // System sound - use SetAudioUri with ms-winsoundevent URI
+                    var soundUri = NotificationSoundHelper.GetSystemSoundEventUri(sound);
+                    builder.SetAudioUri(new Uri(soundUri));
+                    Debug.WriteLine($"🔊 Applied system sound: {sound} -> {soundUri}");
                 }
                 else
                 {
                     // Fallback to default
-                    builder.SetAudioEvent(AppNotificationSoundEvent.Default, AppNotificationAudioLooping.None);
+                    builder.SetAudioUri(new Uri("ms-winsoundevent:Notification.Default"));
                     Debug.WriteLine($"🔊 Unknown sound type {sound}, using default");
                 }
             }
@@ -387,7 +389,7 @@ namespace SmartNotificationManager.View.Services
                 // Fallback to default sound
                 try
                 {
-                    builder.SetAudioEvent(AppNotificationSoundEvent.Default, AppNotificationAudioLooping.None);
+                    builder.SetAudioUri(new Uri("ms-winsoundevent:Notification.Default"));
                 }
                 catch
                 {

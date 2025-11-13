@@ -13,7 +13,7 @@ namespace SmartNotificationManager.ViewModel
 
         public override void GetExcludedPackages()
         {
-             GetExcludedPackagesRequest request = new GetExcludedPackagesRequest(UserId);
+             GetExcludedPackagesRequest request = new GetExcludedPackagesRequest(default);
             var getExcludedPackagesUseCase = new GetExcludedPackages(request, default);
             getExcludedPackagesUseCase.Execute();
         }

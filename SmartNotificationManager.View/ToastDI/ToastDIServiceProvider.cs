@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using SmartNotificationManager.ViewModel;
+using SmartNotificationManager.ViewModel.Contract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +37,7 @@ namespace SmartNotificationManager.WinUI.ToastDI
                 try
                 {
                     IServiceCollection servicesCollection = new ServiceCollection();
+                    servicesCollection.AddTransient<SettingsVMBase, SettingsVM>();
 
                     //servicesCollection.AddTransient<ToastViewModelBase, ToastViewModel>();
                     //servicesCollection.AddTransient<KToastListVMBase, KToastListViewModel>();
